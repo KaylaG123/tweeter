@@ -13,8 +13,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #3ae;
+                color: #eff;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -50,7 +50,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #eff;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -82,17 +82,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
+                    <img src="/images/twitterlogo.png" class="logo" width="100" height="100" alt="navlogo">
+                </div>
+            <div class="content">
+                <div class="title m-b-md">
                     Tweeter
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+            <div class="content">
+                <div class="welcome">
+                    Connect With Like-Minded People
                 </div>
             </div>
         </div>
