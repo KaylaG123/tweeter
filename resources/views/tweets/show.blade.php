@@ -6,7 +6,10 @@
         <div class="col">
             @include('tweets._tweet')
             <br />
-            <a href="/tweets/" class="btn btn-primary">back</a>
+            <div class="col-12 offset-11">
+                <a href="/tweets/" class="btn btn-primary">back</a>
+            </div>
+            <br />
         </div>
     </div>
 </div>

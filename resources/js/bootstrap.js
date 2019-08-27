@@ -1,3 +1,6 @@
+import Vue from 'vue'
+import Axios from 'axios'
+
 window._ = require('lodash');
 
 /**
@@ -21,6 +24,14 @@ try {
 
 window.axios = require('axios');
 
+//add vue stuff so it can send an axios request
+window.Vue = Vue;
+
+// window.axios.defaults.headers.common['X-CSRF-TOKEN'] = Laravel.csrfToken;
+// window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + Laravel.apiToken;
+
+window.axios = axios;
+
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
@@ -32,7 +43,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 let token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    // window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content; //comment out because it throws an axios request error
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
@@ -53,3 +64,6 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+// import GifSearch from './components/GifSearch';
+// window.Vue.component('gif-search', GifSearch);

@@ -11,15 +11,21 @@
                         @include('comments._comment')
                     @endforeach
                 </div>
+
+                <div class="row">
+                    <div>
+                        <a href="/comments/create/{{ $tweet->id }}"><i class="fas fa-comment"></i></a>
+                    </div>
+                    <a href="/tweets/{{ $tweet->id }}/like" class="btn btn-link">Like</a>
+                    ({{ $tweet->likes()->count() }})
                     @if(Auth::id() == $tweet->user_id)
-                        <a href="/tweets/{{ $tweet->id }}/edit" class="btn btn-primary">Edit</a>
-                    @endif
-                <div>
-                    <a href="/comments/create/{{ $tweet->id }}" class="btn btn-primary">Comment</a>
                 </div>
-                <a href="/tweets/{{ $tweet->id }}/like" class="btn btn-link">Like</a>
-                ({{ $tweet->likes()->count() }})
+                <div class="col">
+                    <a href="/tweets/{{ $tweet->id }}/edit"><i class="far fa-edit"></i></a>
+                </div>
+                @endif
             </div>
+
              @if(Auth::id() == $tweet->user_id)
 
             <div class="col-2 d-flex align-items-center justify-content-end">

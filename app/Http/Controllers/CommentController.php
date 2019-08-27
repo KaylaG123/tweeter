@@ -34,12 +34,13 @@ class CommentController extends Controller
             'body' => 'required|max:300',
             'tweet_id' => 'required'
         ]);
+        $data = $request->all();
 
         $comment = new \App\Comment;
         $comment->user_id = Auth::id();
         $comment->tweet_id = $request->tweet_id;
         $comment->body = $request->body;
-
+        $comment->gif = $request->gif;
 
 
         if($comment->save()) {
@@ -84,6 +85,7 @@ class CommentController extends Controller
     {
         $comment = \App\Comment::find($id);
         $comment->body = $request->body;
+        $comment->gif = $request->gif;
 
         if($comment->save()) {
             return redirect('/tweets/' . $comment->tweet_id);

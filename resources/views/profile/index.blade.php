@@ -3,8 +3,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="card">
-                <img class="card-img-top" src="/storage/avatars/{{ $user->profile->avatar }}" alt="Card image">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/storage/images/{{ $user->profile->avatar }}" alt="Card image">
                 <div class="card-body">
                     <h4 class="card-title"><a href="/users/profile/{{$user->id}}">{{$user->name}}</a></h4>
                     <h4 class="card-title">{{$user->profile->location}}</h4>
