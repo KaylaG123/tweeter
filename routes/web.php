@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('marketing.index');
+});
+
+Route::get('marketing', function(){
+    return view('marketing.index');
 });
 
 Route::middleware('auth')->group(function() {
