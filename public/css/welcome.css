@@ -1,11 +1,21 @@
 html,
 body {
-  background-color: #3ae;
+  background-image: url("/images/mark4.jpg");
+  background-position: top center;
+  background-repeat: round;
+  background-size: cover;
   color: #3ae;
-  font-family: "Nunito", sans-serif;
-  font-weight: 200;
   height: 100vh;
   margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+#animate1 {
+  transition: transform 0.3s ease-out;
+}
+
+.zap {
+  transform: scale(2.5, 0);
 }
 
 .flex-center {
@@ -26,7 +36,7 @@ body {
   font-size: 84px;
 }
 
-.links > a {
+.navbar > a {
   color: #eff;
   padding: 0 25px;
   font-size: 13px;
@@ -40,27 +50,227 @@ body {
   margin-bottom: 30px;
 }
 
-.jumbotron {
+.bird {
   position: relative;
   overflow: hidden;
   background-color: white;
-  margin-top: 15px;
+  margin-top: 55px;
 }
 
-.jumbotron video {
+.bird video {
   position: absolute;
   z-index: 1;
   top: 0;
   width: 100%;
   height: 100%;
   /*  object-fit is not supported on IE  */
-  -o-object-fit: scale-down;
-     object-fit: scale-down;
-  opacity: 0.5;
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 0.8;
 }
 
-.jumbotron .container {
-  z-index: 2;
+.bird .container {
+  z-index: 10;
   position: relative;
+  height: 70vh;
+}
+
+.coffee {
+  position: relative;
+  overflow: hidden;
+  height: 55vh;
+}
+
+.coffee video {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /*  object-fit is not supported on IE  */
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.7;
+}
+
+.coffee .container {
+  z-index: 10;
+  position: relative;
+  color: white;
+  text-transform: uppercase;
+  text-transform: full-width;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.jumbotron {
+  border-radius: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.call {
+  /* The image used */
+  background-image: url("/images/phone.png");
+  /* Full height */
+  height: 100%;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+.digit {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+.digit.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@-webkit-keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+.floating {
+  display: flex;
+  width: 150px;
+  height: 150px;
+  box-sizing: border-box;
+  border: 5px white solid;
+  border-radius: 50%;
+  overflow: hidden;
+  align-items: center;
+  justify-contents: center;
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  transform: translatey(0px);
+  -webkit-animation: float 6s ease-in-out infinite;
+          animation: float 6s ease-in-out infinite;
+  background-color: skyblue;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.3);
+  justify-contents: space-between;
+  margin: 5px;
+}
+
+.login {
+  position: relative;
+  display: inline-block;
+  border-radius: 27px;
+  width: 180px;
+  height: 60px;
+  font: 700 14px/40px "Droid Sans", sans-serif;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mobile {
+  border-radius: 27px;
+}
+
+.lead {
+  font-weight: bold;
+}
+
+.blurb {
+  display: flex;
+  color: white;
+  text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .box3 {
+    margin-left: 15px;
+  }
+
+  .box5 {
+    margin-left: 25%;
+  }
+
+  .floating {
+    display: inline-flex;
+  }
+
+  .btn-liquid {
+    display: none;
+  }
+
+  .btn-liquid .inner {
+    display: none;
+  }
+
+  .btn-liquid canvas {
+    display: none;
+  }
+
+  .login {
+    display: none;
+  }
+
+  .box {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center space-between;
+  }
+}
+
+@media (min-width: 991px) {
+  .mobile {
+    display: none;
+  }
+
+  .box {
+    display: grid;
+    display: inline-grid;
+    padding: 20px;
+  }
+
+  .blurb .lead {
+    margin-left: 60px;
+  }
 }
 

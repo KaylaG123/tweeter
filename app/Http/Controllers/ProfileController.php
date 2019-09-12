@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Tweet;
 use App\Comment;
 use App\Like;
+use App\LikeableTrait;
 use App\User;
 use App\Profile;
 use Auth;

@@ -17,7 +17,6 @@ class CreateLikesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
             $table->bigInteger('tweet_id');
-            $table->unique(['user_id', 'tweet_id']);
             $table->timestamps();
         });
     }

@@ -23,8 +23,13 @@ Route::middleware('auth')->group(function() {
     Route::resource('/tweets', 'TweetController');
 });
 
-Route::get('/tweets/{tweet}/like', 'TweetController@like');
+// Route::get('/tweets/{tweet}/like', 'TweetController@like');
 Route::resource('/tweets', 'TweetController');
+// Route::post('/like', 'TweetController@likeTweet')->name('like');
+
+Route::post('/tweets/{tweet}/like', 'TweetController@like');
+Route::post('/tweets/{tweet}/unlike', 'TweetController@unlike');
+
 
 Auth::routes();
 
@@ -81,3 +86,4 @@ Route::get('/users/profile/{user}/edit', 'ProfileController@edit')->name('user_p
 Route::put('/users/profile/{user}', 'ProfileController@update');
 
 Route::get('/latest', 'TweetController@list');
+// Route::get('ajax')

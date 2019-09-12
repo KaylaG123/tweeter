@@ -6,7 +6,9 @@
         <a href="/tweets/create" class="btn btn-primary">Tweet</a>
     </h2>
 </div>
+
     @foreach ($tweets as $tweet)
         @include('tweets._tweet')
     @endforeach
+    {{ $tweets->links() }}
 @endsection

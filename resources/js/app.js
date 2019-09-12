@@ -1,3 +1,5 @@
+
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -19,6 +21,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('gif-search', require('./components/GifSearch.vue').default);
+Vue.component('like-tweet', require('./components/LikeTweet.vue').default);
 
 
 /**
@@ -55,3 +58,41 @@ jQuery(document).ready(function() {
         });
     });
 });
+// $('[data-like]').on('click', function(e) {
+//     jQuery.ajaxSetup({
+//         headers: {
+//             'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+//         }
+//     });
+//     var self = $(this),
+//             tweetId = self.data('like');
+//             self.prop('disabled', true);
+//
+//             $.ajax({
+//                 type: "POST",
+//                 url: '/like',
+//                 data: {tweetId:tweetId},
+//             }).done(function(data) {
+//                 $('#count').html(data.current_count);
+//                 if ($("#btn").html() == "like") {
+//                 $("#btn").html('unlike');
+//                 }
+//                else {
+//                $("#btn").html('like');
+//                }
+//             }).always(function() {
+//                 self.prop('disabled', false);
+//             });
+//         });
+
+// function LikeUnLikeButton() {
+//             $(".like-Unlike").click(function (e) {
+//                 if ($(this).html() == "Like") {
+//                     $(this).html('Unlike');
+//                 }
+//                 else {
+//                     $(this).html('Like');
+//                 }
+//             });
+//         }
+// LikeUnLikeButton();

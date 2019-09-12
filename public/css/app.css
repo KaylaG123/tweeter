@@ -10702,7 +10702,11 @@ a.text-dark:focus {
 }
 
 .btn {
-  border-radius: 15px;
+  border-radius: 27px;
+}
+
+a > .tweet-body {
+  text-decoration: none;
 }
 
 .profile-card-2 .card-img-block {

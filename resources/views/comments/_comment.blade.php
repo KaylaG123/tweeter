@@ -10,7 +10,7 @@
 
         @if(Auth::id() == $comment->user_id)
         <hr />
-        <a href="/comments/{{ $comment->id }}/edit" class="btn btn-info">Edit</a> |
+        <a href="/comments/{{ $comment->id }}/edit" class="btn btn-link">Edit</a> |
         @endif
 
         @if(Auth::id() == $comment->user_id)
